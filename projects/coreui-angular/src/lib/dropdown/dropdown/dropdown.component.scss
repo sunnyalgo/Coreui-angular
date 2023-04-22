@@ -1,0 +1,94 @@
+// todo: find better solution
+
+:host-context(.dropdown, .dropup):not(.btn-group) {
+  display: block;
+  min-width: fit-content;
+}
+
+:host-context(.dropstart, .dropend):not(.btn-group) {
+  display: inline-flex;
+}
+
+:host-context(html:not([dir=rtl])) {
+  :host-context(.input-group) {
+    :host {
+      &:first-child {
+        &::ng-deep :first-child {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        &::ng-deep :not(:first-child):not(.dropdown-menu) {
+          margin-left: -1px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+
+          &:not(:only-of-type) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        }
+      }
+
+      &:last-child {
+        &::ng-deep :first-child {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+
+          &:not(:only-of-type) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        }
+
+        &::ng-deep :not(:first-child):not(.dropdown-menu) {
+          margin-left: -1px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+:host-context([dir=rtl] .input-group) {
+  :host {
+    direction: rtl;
+
+    &:first-child {
+      &::ng-deep :first-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      &::ng-deep :not(:first-child):not(.dropdown-menu) {
+        margin-right: -1px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &:not(:only-of-type) {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+
+    &:last-child {
+      &::ng-deep :first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &:not(:only-of-type) {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+
+      &::ng-deep :not(:first-child):not(.dropdown-menu) {
+        margin-right: -1px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+}
